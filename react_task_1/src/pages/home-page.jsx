@@ -3,11 +3,16 @@ import CycleMan from '../assets/cycle-man.png';
 import FacebookLogo from '../assets/facebook-icon.svg';
 import GoogleLogo from '../assets/google-icon.svg';
 import ArrowIcon from '../assets/arrow-icon.svg';
+import { useNavigate } from 'react-router-dom';
 
 import Button from '../components/button-component';
 import Input from '../components/inputField-component';
 
 function Homepage() {
+  const navigate=useNavigate()
+  const onClickHandler=() => {
+    navigate("sign-up")
+  }
   return (
     <div className='relative container mx-auto flex flex-col items-center'>
       <div className='absolute w-[300px] sm:w-auto top-3 lg:top-14  lg:left-24 z-10 text-center lg:text-left '>
@@ -45,7 +50,7 @@ function Homepage() {
           </label>
         </div>
 
-        <button className='bg-[#FFB7D5]  w-full h-8 lg:w-20 lg:h-20 rounded-[35px] shadow-[0_10px_30px_rgba(255,183,213)] flex justify-center items-center mb-2 lg:mb-5'>
+        <button className='bg-[#FFB7D5]  w-full h-8 lg:w-20 lg:h-20 rounded-[35px] shadow-[0_10px_30px_rgba(255,183,213)] flex justify-center items-center mb-2 lg:mb-5' onClick={onClickHandler}>
           <img className='w-[23px] h-[23px]' src={ArrowIcon} alt="click" />
         </button>
 
